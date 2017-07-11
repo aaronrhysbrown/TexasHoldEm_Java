@@ -49,80 +49,7 @@ public class TexasHoldEmHelpers {
         }
         return null;
     }
-/*
-    private static T Is<T>(Function<List<Card>, T> action, Card self, Card[] cards)
-    {
-        if (self == null || cards == null || cards.Length == 0)
-        {
-            return default(T);
-        }
-        var list = cards.ToList();
-        list.Insert(0, self);
-        return action(list);
-    }
 
-    public static bool IsPair(Card self, params Card[] cards)
-    {
-        return Is(IsPair, self, cards);
-    }
-
-    public static bool IsTwoPair(Card self, params Card[] cards)
-    {
-        return Is(IsTwoPair, self, cards);
-    }
-
-    public static bool IsThreeOfAKind(Card self, params Card[] cards)
-    {
-        return Is(IsThreeOfAKind, self, cards);
-    }
-
-    public static bool IsStraight(Card self, params Card[] cards)
-    {
-        return Is(IsStraight, self, cards);
-    }
-
-    public static bool IsFlush(Card self, params Card[] cards)
-    {
-        return Is(IsFlush, self, cards);
-    }
-
-    public static bool IsFullHouse(Card self, params Card[] cards)
-    {
-        return Is(IsFullHouse, self, cards);
-    }
-
-    public static bool IsFourOfAKind(Card self, params Card[] cards)
-    {
-        return Is(IsFourOfAKind, self, cards);
-    }
-
-    public static bool IsStraightFlush(Card self, params Card[] cards)
-    {
-        return Is(IsStraightFlush, self, cards);
-    }
-
-    public static bool IsFourCardFlush(Card self, params Card[] cards)
-    {
-        return Is(IsFourCardFlush, self, cards);
-    }
-
-    public static bool IsFourCardStraight(Card self, params Card[] cards)
-    {
-        return Is(IsFourCardStraight, self, cards);
-    }
-
-    public static bool IsHiddenPair(Card self, out int pairRank, params Card[] cards)
-    {
-        return IsHiddenPair(new List<Card> { self }, cards, out pairRank);
-    }
-
-    public static int HandRank(Card self, params Card[] cards)
-    {
-        return Is(HandRank, self, cards);
-    }
-    #endregion
-*/
-//    #region Private
     private static Boolean _isInitialiseTactics = false;
     private static void InitAnalysis()
     {
@@ -453,6 +380,7 @@ public class TexasHoldEmHelpers {
             : "Invalid hand rank";
     }
     
+    /* TEST
     public static void main(String[] args) {
     	Card c7 = new Card(CardIndexType.Six, CardSuitType.Hearts);
     	Card c4 = new Card(CardIndexType.Ten, CardSuitType.Spades);
@@ -497,5 +425,5 @@ public class TexasHoldEmHelpers {
     	System.out.println(Ranks[49]);
     	System.out.println(HandRank(cards));
     	
-    }
+    } */
 }
