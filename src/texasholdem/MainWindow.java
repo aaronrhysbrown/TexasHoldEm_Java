@@ -244,6 +244,8 @@ public class MainWindow extends javax.swing.JFrame {
         iconOppDeal = new javax.swing.JLabel();
         txtBet = new javax.swing.JLabel();
         txtOppBet = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        txtVS = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         lblPwd = new javax.swing.JLabel();
@@ -263,6 +265,8 @@ public class MainWindow extends javax.swing.JFrame {
         txtThinkingTime = new javax.swing.JTextField();
         chkPlayAnotherGame = new javax.swing.JCheckBox();
         btnCancelGame = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        txtResult = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -338,21 +342,33 @@ public class MainWindow extends javax.swing.JFrame {
         txtOppBet.setText("Bet: 0");
         jPanel2.add(txtOppBet, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 179, -1, -1));
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtVS.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtVS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtVS.setText("player vs. opponent");
+        jPanel3.add(txtVS, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, 220, -1));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         jLabel5.setText("Bot ID:");
@@ -402,7 +418,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLabel11.setText("Add \"Thinking Time\" (ms):");
 
-        txtThinkingTime.setText("1500");
+        txtThinkingTime.setText("500");
         txtThinkingTime.setToolTipText("");
 
         chkPlayAnotherGame.setText("Play another game when complete");
@@ -414,44 +430,54 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        txtResult.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtResult.setText("Last game result");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(lblPwd))
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(33, 33, 33)
-                                    .addComponent(lblPwd))
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(28, 28, 28)
-                                .addComponent(txtOpp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(chkDontPlaySameAcc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel10)
-                            .addComponent(jScrollPane2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(btnRefreshGameStyles))
+                                    .addComponent(jLabel9)
+                                    .addGap(28, 28, 28)
+                                    .addComponent(txtOpp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(chkDontPlaySameAcc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel10)
+                                .addComponent(jScrollPane2)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(84, 84, 84)
+                            .addComponent(btnRefreshGameStyles))
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel11)
+                            .addGap(44, 44, 44)
+                            .addComponent(txtThinkingTime, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(chkPlayAnotherGame))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(88, 88, 88)
+                            .addComponent(btnCancelGame))
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jSeparator1)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel11)
-                        .addGap(44, 44, 44)
-                        .addComponent(txtThinkingTime, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(chkPlayAnotherGame))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(btnCancelGame)))
+                        .addComponent(txtResult)))
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -503,7 +529,11 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(chkPlayAnotherGame)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnCancelGame))
+                        .addComponent(btnCancelGame)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtResult, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -520,7 +550,10 @@ public class MainWindow extends javax.swing.JFrame {
         txtPwd.setVisible(true);
         txtBalance.setText("Balance: ");
         txtOpp.setText("");
-        txtThinkingTime.setText("1500");
+        txtThinkingTime.setText("500");
+        txtVS.setVisible(false);
+        txtResult.setVisible(false);
+        txtResult.setText("");
         btnLogin.setVisible(true);
         btnLogout.setVisible(false);
         btnCancelGame.setVisible(false);
@@ -689,6 +722,24 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }
     
+    private void updateGameResult(GameState gs) {
+        String result;
+        switch(gs.GameStatus) {
+            case "WON": case "WON_BY_TIMEOUT":
+                result = "won"; break;
+            case "LOST": case "LOST_BY_TIMEOUT":
+                result = "lost"; break;
+            case "DRAWN":
+                result = "has drawn"; break;
+            default: return;
+        }
+        //txtResult = new javax.swing.JLabel("Last game ("+gs.GameId+") result: This bot "+result+
+        //        " against"+gs.OpponentId+" ("+gs.GameStatus+")", javax.swing.SwingConstants.CENTER);
+        txtResult.setText("<html>Last game ("+gs.GameId+") result: This bot "+result+
+               " against<br>"+gs.OpponentId+" ("+gs.GameStatus+")</html>");
+        txtResult.setVisible(true);
+    }
+    
     /**
      * Make an http call to the specified url using the information provided by
      * the req object.
@@ -804,6 +855,8 @@ public class MainWindow extends javax.swing.JFrame {
             String result = offerGame(GameStyleId);
             if(result.equals("Invited Bot Not Existing")) return null;
             
+            // Hide the last result
+            txtResult.setVisible(false);
             // Show the cancel game button since the player is waiting for a game.
             btnCancelGame.setText("Cancel Game");
             isWaitingForGame = true;        
@@ -825,6 +878,9 @@ public class MainWindow extends javax.swing.JFrame {
         private void autoPlayGame(GameState gs) {
             // Now a game has started so change the cancel game button to "Stop Game".
             btnCancelGame.setText("Stop Game");
+            // Display the lable  "player vs opponent" above the board.
+            txtVS.setText(txtId.getText()+" vs "+gs.OpponentId);
+            txtVS.setVisible(true);
             isWaitingForGame = false;
             isAutoPlaying = true;
             
@@ -865,11 +921,15 @@ public class MainWindow extends javax.swing.JFrame {
                 else {
                     pfgsres = pollForGameState(txtId.getText(), String.valueOf(txtPwd.getPassword()), playerKey);
                     Result = pfgsres.Result;
-                    if (!Result.equals("SUCCESS")) break;
                     gs = pfgsres.GameState;
                     publish(gs);
+                    if (!Result.equals("SUCCESS")) break;
                 }
             }
+            // Refresh the game styles and balance
+            refreshGameStyles();
+            // Update the game result
+            updateGameResult(gs);
         }
         
         public AutoPlayWorker(int GameStyleId) {
@@ -900,6 +960,8 @@ public class MainWindow extends javax.swing.JFrame {
             isAutoPlaying = false;
             // Reactivate the list with game styles.
             listGameStyles.setCellRenderer(new javax.swing.JList<>().getCellRenderer());
+            // Hide the label "player vs opponent" above the board.
+            txtVS.setVisible(false);
         }
     }
     
@@ -1119,7 +1181,9 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblPwd;
     private javax.swing.JList<String> listGameStyles;
     private javax.swing.JLabel txtBalance;
@@ -1131,7 +1195,9 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel txtOppStack;
     private javax.swing.JLabel txtPot;
     private javax.swing.JPasswordField txtPwd;
+    private javax.swing.JLabel txtResult;
     private javax.swing.JLabel txtStack;
     private javax.swing.JTextField txtThinkingTime;
+    private javax.swing.JLabel txtVS;
     // End of variables declaration                   
 }
