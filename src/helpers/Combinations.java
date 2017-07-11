@@ -26,8 +26,8 @@ public class Combinations {
     	combinationsRec(arr, len, 0, accum, result);
     	return result;
     }
-
-	public static void main(String[] args) {
+    /* TEST
+    public static void main(String[] args) {
 		
     	Card c4 = new Card(CardIndexType.Nine, CardSuitType.Spades);
     	Card c3 = new Card(CardIndexType.Nine, CardSuitType.Hearts);
@@ -54,5 +54,5 @@ public class Combinations {
             System.out.println(combination.size());	
             System.out.println(combination.get(0).Suit == combination.get(combination.size()-1).Suit);
         }
-	}
+    } */
 }
